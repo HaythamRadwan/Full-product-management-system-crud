@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="description" content="Full product management system crud with javascript
+        "/>
+        <title>Full product management system crud</title>
+        <link rel="stylesheet" href="../css/style.css"/>
+        <link rel="stylesheet" href="../fonts/fontawesome-free-6.1.1-web/css/all.css"/>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,300&family=Poppins:wght@400;600&family=Roboto+Condensed&display=swap" rel="stylesheet">
+        <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+        <style>
+
+        </style>
+    </head>
+    <body>
+        ‍‍<div class="crud" id="crud">
+        
+                    <!-- *** Start Head *** -->
+            <div class="head">
+                <h1 class="address">crud</h1>
+                <p class="p-address">product management system</p>
+            </div> <!-- ./head -->
+
+                    <!-- End Head -->
+
+                    <!-- *** Start Input *** -->
+
+            <div class="input" id="myInput">
+                <input type="text" placeholder="Title" class="" id="title"/>
+
+                <div class="price">
+                    <input type="number" placeholder="Price" id="price"  onkeyup="getTotal();"/>
+                    <input type="number" value="" placeholder="Taxes" id="taxes" onkeyup="getTotal();"/>
+                    <input type="number" value="" placeholder="Ads" id="ads" onkeyup="getTotal();"/>
+                    <input type="number" value="" placeholder="Discount" id="dis" onkeyup="getTotal();"/>
+                    <!-- <input type="number" placeholder="Total:"/> -->
+                    <small id="total"></small>
+                </div>
+
+                <input type="number" placeholder="Count" id="count"/>
+
+                <input type="text" placeholder="Category" id="category"/>
+
+                <button class="btn" id="submit" onclick="deleteall();">Create</button>
+
+                <button id="clear" class="btn" onclick="clearData();">Clear</button>
+            </div> <!-- ./input -->
+
+                    <!-- End Input -->
+
+
+                    <!-- *** Start Output *** -->
+            <div class="output" id="output">
+
+                <input type="search" placeholder="Search" id="srh" onkeyup="searchData(this.value);"/>
+                <div class="search-by">
+                    <button class="btn" id="srh-title" onclick="searchMode(this.id);">search by title</button>
+                    <button class="btn" id="srh-categ" onclick="searchMode(this.id);">search by category</button>
+                </div>
+
+                <div id="delete-all">
+                    <!-- <button class="btn delete-all">delete all</button>  ==>> هنعملها ب js  -->
+                </div>
+
+            </div> <!-- ./output -->
+
+                    <!-- *** End Output *** -->
+
+            
+                    <!-- Start Table -->
+
+            <table>
+                <tr class="tr-address">
+                    <th>id</th>
+                    <th>title</th>
+                    <th>price</th>
+                    <th>taxes</th>
+                    <th>ads</th>
+                    <th>Discount</th>
+                    <th>total</th>
+                    <th>category</th>
+                    <th>update</th>
+                    <th>delete</th>
+                </tr>
+                <tbody id="t-baody">
+                    
+                    
+                </tbody>
+            </table>
+
+                    <!-- End Table -->
+
+        </div> <!-- ./crud -->
+
+        <script src="../js/main.js"></script>
+    </body>
+</html>
